@@ -16,4 +16,5 @@
 1. Change the duty cycle and frequency as required (I have set them as per a sample code I found online, but we might need to change it) 
 2. Might want to try keeping the duty cycle at 100 (100%) and lowering the frequency to make sure that there is current flowing into the motor by feeling wheter the rotor is experiencing any forces or with a multimeter. This should turn the system to a single-phase DC supply.
 3. Adjust the countdown as required
-4. Run code
+4. Connect the power supply to ESC (based on tests, the motor needs around 11V through it to have a noticable effect.
+5. Run code
