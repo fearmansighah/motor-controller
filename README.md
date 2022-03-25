@@ -12,8 +12,10 @@
 2. Connect GND to the Brown female plug of the ESC (ground)
 
 ## Download Pigs
-'sudo apt-get update
-sudo apt-get install pigpio python-pigpio python3-pigpio'
+    sudo apt-get update'
+    sudo apt-get install pigpio python-pigpio python3-pigpio
+ Checck version with
+    pigpiod -v
 
 ## Running Code for Raspberry Pi:
 1. motor-controller -> baby_motor.py
