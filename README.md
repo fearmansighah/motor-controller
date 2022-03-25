@@ -11,6 +11,10 @@
 1. Connect GPIO4 to the Yellow female plug of ESC (signal wire)
 2. Connect GND to the Brown female plug of the ESC (ground)
 
+## Download Pigs
+'sudo apt-get update
+sudo apt-get install pigpio python-pigpio python3-pigpio'
+
 ## Running Code for Raspberry Pi:
 1. motor-controller -> baby_motor.py
 3. Change the duty cycle and frequency as required (I have set them as per a sample code I found online, but we might need to change it) 
