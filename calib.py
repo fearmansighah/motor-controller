@@ -11,8 +11,9 @@
 # sudo pigpiod
 
 import time
-
+import os
 import pigpio
+os.system('sudo pigpiod')
 
 SERVO = 4
 
@@ -33,3 +34,6 @@ time.sleep(1)
 pi.set_servo_pulsewidth(SERVO, 0) # Stop servo pulses.
 
 pi.stop() # Disconnect from local Raspberry Pi.
+
+
+os.system('sudo killall pigpiod')
