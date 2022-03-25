@@ -1,28 +1,8 @@
 # Multi ESC Calibration for Drones
 import os    
 import time   
-os.system ("sudo pigpiod") 
-time.sleep(1) 
 import pigpio 
 
-ESC = 17  
-ESC_2 = 18
-ESC_3 = 27
-ESC_4 = 22
-
-Count_ESC = [ESC , ESC_2, ESC_3, ESC_4]
- 
-
-pi = pigpio.pi();
-
-for E in Count_ESC:
-    pi.set_servo_pulsewidth(E, 0) 
-
-max_value = 2000 
-min_value = 790  
-
-    print("please disconnect battery.. then press kal")
-                
 def calibrate():   
     for E in Count_ESC: 
         pi.set_servo_pulsewidth(E, 0)
@@ -77,8 +57,22 @@ def stop():
     for E in Count_ESC:
         pi.set_servo_pulsewidth(E, 0)
     pi.stop()
+    
+os.system ("sudo pigpiod") 
+time.sleep(1) 
 
+ESC = 4
+Count_ESC = [ESC]
+
+pi = pigpio.pi();
+
+for E in Count_ESC:
+    pi.set_servo_pulsewidth(E, 0) 
   
+max_value = 2000 
+min_value = 1000  
+print("please disconnect battery.. then press kal")
+                
 inp = raw_input()
 
 if inp == "kal":
@@ -86,4 +80,4 @@ if inp == "kal":
 
 elif inp == "stop":
     stop()
-    os.system ("sudo kill all pigpiod") 
+    os.system ("sudo killall pigpiod") 
