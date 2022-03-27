@@ -31,32 +31,39 @@ class gate:
         quit() # end program
     
     def set_freq(self, freq_change):
-        if self.freq < 100 and self.freq > 0.1:
-            if freq_change == 'inc':
-                self.freq += 1
-                self.pwm.ChangeFrequency(self.freq)
-            elif freq_change == 'dec':
-                self.freq -= 1
-                self.pwm.ChangeDutyCycle(self.freq)
-            elif isinstance(freq_change, int) == True:
-                self.freq = freq_change
-                self.pwm.ChangeDutyCyle(freq_change)
-            else:
-                print('invalid input try again')
+        if freq_change == 'inc':
+            self.freq += 1
+            self.pwm.ChangeFrequency(self.freq)
+
+        elif freq_change == 'dec':
+            self.freq -= 1
+            self.pwm.ChangeDutyCycle(self.freq)
+
+        elif isinstance(freq_change, int) == True:
+            self.freq = freq_change
+            self.pwm.ChangeDutyCyle(freq_change)
+
+        else:
+            print('invalid input try again')
         
     
     def set_dc(self, dc_change):
-        if dc_change == 'inc':
-            self.dc += 1
-            self.pwm.ChangeDutyCycle(self.dc)
-        elif dc_change == 'dec':
-            self.dc -= 1
-            self.pwm.ChangeDutyCycle(self.dc)
-        elif isinstance(dc_change, int) == True:
-            self.freq = dc_change
-            self.pwm.ChangeDutyCyle(dc_change)
-        else:
-            print('invalid input try again')
+        if dc_change
+            if dc_change == 'inc':
+                self.dc += 1
+                self.pwm.ChangeDutyCycle(self.dc)
+
+            elif dc_change == 'dec':
+                self.dc -= 1
+                self.pwm.ChangeDutyCycle(self.dc)
+
+            elif isinstance(dc_change, int) == True:
+                self.freq = dc_change
+                self.pwm.ChangeDutyCyle(dc_change)
+
+            else:
+                print('invalid input try again')
+                
 
 pins = [12, 13, 18]
 a = gate(pin=12, dc=50, freq=6) 
@@ -116,6 +123,9 @@ while True:
         new_dc = float(input('new dc (%) 0 < dc < 100: '))
         for gate in gates:
             gate.set_dc(new_dc)
+
+    else:
+        print('try again')
 
     
     

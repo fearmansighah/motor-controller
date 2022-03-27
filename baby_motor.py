@@ -1,9 +1,6 @@
 import time
 import RPi.GPIO as GPIO
 
-import time
-import RPi.GPIO as GPIO
-
 for i in range(0,5):
     time.sleep(1)
     print(5-i)
