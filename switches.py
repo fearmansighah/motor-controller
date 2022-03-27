@@ -7,10 +7,6 @@ class gate:
         self.dc = dc
         self.freq = freq
 
-        # attach methods
-        self.setmode = GPIO.setmode
-        self.setup = GPIO.setup
-        self.pwm = GPIO.pwm
 
     def add_delay(self):
         self.delay = 1/self.freq*self.dc
