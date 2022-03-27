@@ -36,6 +36,7 @@ class motor:
             self.pwm.ChangeDutyCyle(freq_change)
         else:
             print('invalid input try again')
+        print(self.freq, ' Hz')
     
     def set_dc(self, dc_change):
         if dc_change == 'inc':
@@ -49,6 +50,7 @@ class motor:
             self.pwm.ChangeDutyCyle(dc_change)
         else:
             print('invalid input try again')
+        print(self.dc, ' %')
 
     
 m = motor(pin=12, dc=15, freq=55)
